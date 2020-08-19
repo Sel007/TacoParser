@@ -12,31 +12,23 @@
             logger.LogInfo("Begin parsing");
 
             
-            //DONE// Take your line and use line.Split(',') to split it up into an array of strings, separated by the char ','
+            //Using line.Split(',') to split it up into an array of strings, separated by the char ','
             var cells = line.Split(',');
 
-            //DONE// If your array.Length is less than 3, something went wrong
+            //If array.Length is less than 3 indexes, something went wrong and return null
             if (cells.Length < 3)
             {
-                //DONE// Log that and return null
                 return null;
             }
 
-            // TODO Implement
-            
-            double lat = double.Parse(cells[0]);   //DONE// grab the latitude from your array at index 0
+            double lat = double.Parse(cells[0]);   //Grabbing the latitude from array at index 0
 
-            double longitude = double.Parse(cells[1]);   //DONE// grab the longitude from your array at index 1
-            
-            string name = cells[2];   //DONE// grab the name from your array at index 2
-            //DONE// Your going to need to parse your string as a `double`
-            //DONE// which is similar to parsing a string as an `int`
+            double longitude = double.Parse(cells[1]);   //Grabbing the longitude from array at index 1 and parse the string as a `double`
 
-            //DONE// You'll need to create a TacoBell class
-            //DONE// that conforms to ITrackable
+            string name = cells[2];   //Grabbing the name from your array at index 2
 
-            //DONE// Then, you'll need an instance of the TacoBell class
-            //DONE// With the name and point set correctly
+            //Created a TacoBell class that conforms to ITrackable
+            //Created an instance of the TacoBell class
             TacoBell taco = new TacoBell();
             taco.Name = name;
             taco.Location = new Point()
@@ -45,8 +37,7 @@
                 Longitude = longitude
             };
 
-            //DONE// Then, return the instance of your TacoBell class
-            //DONE// Since it conforms to ITrackable
+            //Returning the instance of the TacoBell class since it conforms to ITrackable
             return taco;
         }   
 
